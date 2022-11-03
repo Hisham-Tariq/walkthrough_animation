@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:walkthrough_animation/assets/assets.gen.dart';
 import 'package:walkthrough_animation/extensions/duration.dart';
 
@@ -183,7 +182,34 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
                 ),
               ),
             ),
-          )
+          ),
+          AnimatedPositioned(
+            bottom: isLastPage ? 30 : -120,
+            duration: defaultAnimationDuration.fast(milliseconds: 200),
+            left: 20,
+            right: 20,
+            child: SizedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account? ',
+                    style: AppTextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Text(
+                    'Login',
+                    style: AppTextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF131d31),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
